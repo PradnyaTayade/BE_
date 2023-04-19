@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Recommendation System</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body style="background-color: white;">
+   
+    
+   
+
+    
+    <section class="contact" style="text-align: center;">
+        <div class="container">
+            <h2 class="text-center">Movie Recommendation System </h2>
+            <div class="carousel col-12 my-5">
+                <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-indicators">
+                      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    </div>
+                    <div class="carousel-inner">
+                      <div class="carousel-item active" style="height: 80vh;">
+                        <img src="https://www.igeeksblog.com/wp-content/uploads/2021/05/Thriller-Movies-on-Netflix-to-watch.jpg" class="d-block w-100" alt="...">
+                      </div>
+                      <div class="carousel-item" style="height: 80vh;">
+                        <img src="https://dnm.nflximg.net/api/v6/6gmvu2hxdfnQ55LZZjyzYR4kzGk/AAAABWGQibHkYFKZCP7B3-1er-Cz_7Hg7-YvUqaKbAJArxehSWKpgRWqzLEpTwGZ_UvQLzho_3BjNYkwo__HPVWRx7U3wAyDS4vOsWvstTd4C7oEJvehGjFX2axxH0aGXXOXK4x3PA.jpg?r=606" class="d-block w-100" alt="...">
+                      </div>
+                      <div class="carousel-item" style="height: 80vh;">
+                        <img src="https://www.91-cdn.com/hub/wp-content/uploads/2022/11/movies-like-kantara-feat-1200x900.jpg" class="d-block w-100" alt="...">
+                      </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Next</span>
+                    </button>
+                  </div>
+            </div>
+
+
+            <section class="col-12">
+                <h3 class="text-center">Recommendation Based on <span id="spancontainer">Title</span></h3>
+           <main  class="contact-box d-flex justify-content-between col-12" style="width: 100%;">
+            <div class="col-md-3 p-3 text-center">
+                <h4 onclick="handleClick(`http://localhost:8501`,'Title')">Title</h4>
+               </div>
+               <div class="col-md-3 p-3 text-center">
+                <h4 onclick="handleClick(`http://localhost:8503`,'Genres')">Genres</h4>
+            </div>
+            <div class="col-md-3 p-3 text-center">
+               <h4 onclick="handleClick(`http://localhost:8502`,'Director')">Director</h4>
+            </div>
+           </main>
+        </section>
+        <section id='display-container' style="width: 100%;height: 800px;">
+            <iframe id='iframecontainer' src="http://localhost:8501" title="title" style="width: 100%;height: 100%;"></iframe>
+        </section>
+
+    </section>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+ 
+    <script>
+        const handleClick=(href,title)=>{
+            document.getElementById("spancontainer").innerHTML = title
+            document.getElementById('iframecontainer').src = href;
+        }
+    </script>
+
+</body>
+</html>
